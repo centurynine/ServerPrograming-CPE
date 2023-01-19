@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>ระบบลงทะเบียนนักศึกษา</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
+    /> -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <%- include('../pages/nav'); %>
   </head>
   <body>
     <h1 class="text-center p-5">ระบบลงทะเบียนนักศึกษา</h1>
@@ -75,7 +77,38 @@
             Faculty: faculty,
         };
         console.log(data);
+        clearInput();
       }
 
+      function clearInput(){
+      var getValue= document.getElementById("FirstName");
+        if (getValue.value !="") {
+            getValue.value = "";
+        }
+      var getValue= document.getElementById("LastName");
+        if (getValue.value !="") {
+            getValue.value = "";
+        }
+      var getValue= document.getElementById("Phone");
+         if (getValue.value !="") {
+              getValue.value = "";
+          }
+      var getValue= document.getElementById("Birthday");
+          if (getValue.value !="") {
+                getValue.value = "";
+            }
+      var getValue= document.getElementById("Faculty");
+            if (getValue.value !="") {
+                  getValue.value = "";
+              }
+      var getValue= document.getElementById("Gender");
+              if (getValue.value !="") {
+                    getValue.value = "";
+                }
+      var getValue= document.getElementById("Email");
+              if (getValue.value !="") {
+                    getValue.value = "";
+                }
+ }
 </script>
 </html>
