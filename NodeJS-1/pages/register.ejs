@@ -68,7 +68,8 @@
         let faculty = document.getElementById('Faculty').value
         let gender =document.getElementById('Gender').value
         let birthday = document.getElementById('Birthday').value
-        const data = {
+        var data = {};
+        data = {
             Firstname: firstname,
             Lastname: lastname,
             Phone: phone,
@@ -77,6 +78,19 @@
             Faculty: faculty,
         };
         console.log(data);
+        data = JSON.parse(data);
+        let root = document.location.hostname
+                const raw = await fetch(`http://${root}/addUser`, {
+                    method: 'POST', // or 'PUT'
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                }).then((res) => {
+                    var root = document.location.hostname
+                    location.href = `http://${root}/`
+                })
+
         clearInput();
       }
 
@@ -111,4 +125,6 @@
                 }
  }
 </script>
+
+<script src="uploadData.js" type="application/json"></script>
 </html>
