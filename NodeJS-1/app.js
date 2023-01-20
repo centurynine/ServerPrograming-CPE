@@ -4,7 +4,6 @@ var  fs = require("fs");
 var app = express();
 let port = '80'
 
-
 app.set("view engine", "ejs");
 app.set("views", "NodeJS-1/pages");
 app.use(express.static(__dirname + '/pages'));
@@ -33,10 +32,12 @@ var server = app.listen(port, function () {
 
 app.post('/addUser', async (req, res) => {
   let data = req.body
-  const jsonData = await JSON.parse(fs.readFileSync( __dirname + "/" + "data.json", 'utf8'))
+  const jsonData = await JSON.parse(fs.readFileSync('./NodeJS-1/data.json', 'utf8'))
+  //jsonData.ppas.push(data)
+  console.log(jsonData)
   console.log(data)
-  fs.writeFileSync('data.json', JSON.stringify(data))
-  res.send('Succes 2s');
+  fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify(jsonData))
+  res.send('Success');
 })
 
 
