@@ -6,7 +6,10 @@ app.set("views", "NodeJS-1/pages");
 app.use(express.static(__dirname + '/pages'));
 app.use(express.json())
 app.get('', (req, res)=> {
-  res.render('register')
+  res.render('index')
+})
+app.get('/home', (req, res)=> {
+  res.render('index')
 })
 app.get('/register', (req, res)=> {
   res.render('register')
