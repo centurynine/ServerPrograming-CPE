@@ -13,14 +13,15 @@
     <%- include('../pages/nav'); %>
   </head>
   <body>
+    
     <h1 class="text-center p-5">ระบบลงทะเบียนนักศึกษา</h1>
     <div class="container">
       <div class="row pt-4">
         <div class="col-4 mx-auto ">
           <label for="FirstName">ชื่อ :</label>
-          <input class="form-control" type="text" id="FirstName" ><br>
+          <input class="form-control" type="text" id="FirstName" name="FirstName"><br>
           <label for="LastName">นามสกุล :</label>
-          <input class="form-control" type="text" id="LastName"><br>
+          <input class="form-control" type="text" id="LastName" name="LastName"><br>
           <label for="LastName">เบอร์โทรศัพท์ :</label>
           <input class="form-control" type="text" id="Phone"><br>
           <label for="LastName">อีเมลล์ :</label>
@@ -50,12 +51,14 @@
           <div class="container">
             <div class="col-md-12 text-center">
               <button class="btn btn-success" onclick="submit()">Submit</button>
+              <!-- <button class="btn btn-success" onclick="submit()">Submit</button> -->
             </div>
         </div>
 
         </div>
       </div>
     </div>
+
   </body>
 
   <script>
@@ -68,7 +71,7 @@
         let faculty = document.getElementById('Faculty').value
         let gender =document.getElementById('Gender').value
         let birthday = document.getElementById('Birthday').value
-        var data = {};
+        // var data = {};
         data = {
             Firstname: firstname,
             Lastname: lastname,
@@ -78,7 +81,6 @@
             Faculty: faculty,
         };
         console.log(data);
-        data = JSON.parse(data);
         let root = document.location.hostname
                 const raw = await fetch(`http://${root}/addUser`, {
                     method: 'POST', // or 'PUT'
@@ -89,6 +91,7 @@
                 }).then((res) => {
                     var root = document.location.hostname
                     location.href = `http://${root}/`
+                    console.log(data);
                 })
 
         clearInput();
