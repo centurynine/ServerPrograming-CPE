@@ -15,8 +15,14 @@ app.get('/', (req, res)=> {
   res.render('register')
 })
 app.get('/home', (req, res)=> {
-  res.render('register')
-})
+  fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
+    if(err) {res.status(400).send('Error List not found');
+  } else {
+    res.render('index', {ListUsers: listObj});
+  }
+});
+});
+
 app.get('/register', (req, res)=> {
   res.render('register')
 })
@@ -39,47 +45,3 @@ app.post('/addUser', async (req, res) => {
   res.send('Success');
 })
 
-
-// var user = {
-//   "user4" : {
-//      "name" : "mohit",
-//      "password" : "password4",
-//      "profession" : "teacher",
-//      "id": 4
-//   }
-// }
-
-// app.post('/addUser', function (req, res) {
-//   // First read existing users.
-//   fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
-//      data = JSON.parse( data );
-//      data["user4"] = user["user4"];
-//      console.log( data );
-//      res.end( JSON.stringify(data));
-//   });
-// })
-
-
-
-// app.get('/listUsers2', function (req, res) {
-//   fs.readFile( __dirname + "/" + "data.json", 'utf8', function (err, data) {
-//      console.log( data );
-//      res.end( data );
-//   });
-// })
-
-// app.get('/listUsers', (req, res) => {
-//   res.json(users)
-// })
-// app.post('/users', (req, res) => {
-//   users.push(req.body)
-//   let json = req.body
-//   res.send(`Add new user '${json.username}' completed.`)
-// })
-// const router = express.Router();
-
-// router.post('/foo', (req, res)=> {
-//   res
-//       .status(200)
-//       .send({msg: 'Foo!'})
-// })

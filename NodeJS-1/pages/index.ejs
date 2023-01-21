@@ -14,7 +14,23 @@
   </head>
   <body>
     <h1 class="text-center p-5">Homepage</h1>
-
+    <div class="container h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+          <div class="jumbotron">
+            Center
+        </div>
+        </div>
+        
+      </div>
+  </div>
+  
+    <div class="card" style="width: 18rem;">
+    <% ListUsers.forEach(function(user){ %>
+      <%= user.Firstname %> <%= user.Lastname %> <br>
+      <% }) %>
+    </div>
+  
   </body>
 
 </html>
