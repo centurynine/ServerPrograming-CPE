@@ -42,6 +42,17 @@ var server = app.listen(port, function () {
 app.post('/addUser', async (req, res) => {
   let data = req.body
   var jsonData = await JSON.parse(fs.readFileSync('./NodeJS-1/data.json'));
+  
+  for (let i=0;i < jsonData.length; i++) { 
+    if (jsonData[i].Email == data.Email || jsonData[i].FirstName == data.FirstName || jsonData[i].LastName == data.LastName) {
+      console.log(jsonData[i].Email + ' == ' + data.Email);
+      console.log(jsonData[i].FirstName + ' == ' + data.FirstName);
+      console.log(jsonData[i].LastName + ' == ' + data.LastName);
+      console.log('Error User already exists');
+      res.send('Error');
+      return;
+    }
+  }
   console.log(jsonData);
   jsonData.push(data);
   jsonID = jsonData.length;

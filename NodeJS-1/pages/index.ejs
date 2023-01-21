@@ -16,7 +16,7 @@
         <% ListUsers.forEach(function(user){ %>
         <div class="col-6 mx-auto">
           <div class="jumbotron text-center">
-            <h3><%= user.Firstname %> <%= user.Lastname %></h3>
+            <h3><%= user.FirstName %> <%= user.LastName %></h3>
             ID : <%= user.id %>
             <p><a class="btn btn-primary btn-lg mt-2" href="/user/<%= user.id %>" role="button">View Profile</a></p>
         </div>
