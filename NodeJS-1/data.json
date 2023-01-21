@@ -3,70 +3,22 @@
     {
       "Firstname": "Saran",
       "Lastname": "Wanphunga",
+      "Email": "lowlifeix@gmail.com",
       "Phone": "0983710776",
-      "birthday": "",
-      "Gender": "ไม่ระบุ",
-      "Faculty": "ไม่ระบุ"
+      "Birthday": "2023-01-05",
+      "Gender": "male",
+      "Faculty": "คณะศิลปศาสตร์"
     }
   ],
   [
     {
       "Firstname": "Saran",
       "Lastname": "Wanphunga",
+      "Email": "lowlifeix@gmail.com",
       "Phone": "0983710776",
-      "birthday": "",
-      "Gender": "",
-      "Faculty": ""
-    }
-  ],
-  [
-    {
-      "Firstname": "Saran",
-      "Lastname": "Wanphunga",
-      "Phone": "+66983710776",
-      "birthday": "",
-      "Gender": "",
-      "Faculty": ""
-    }
-  ],
-  [
-    {
-      "Firstname": "Saran",
-      "Lastname": "Wanphunga",
-      "Phone": "0983710776",
-      "birthday": "",
-      "Gender": "",
-      "Faculty": ""
-    }
-  ],
-  [
-    {
-      "Firstname": "dasdasd",
-      "Lastname": "dasdasd",
-      "Phone": "",
-      "birthday": "",
-      "Gender": "",
-      "Faculty": ""
-    }
-  ],
-  [
-    {
-      "Firstname": "Saran",
-      "Lastname": "Wanphunga",
-      "Phone": "0983710776",
-      "birthday": "",
-      "Gender": "",
-      "Faculty": ""
-    }
-  ],
-  [
-    {
-      "Firstname": "Saran",
-      "Lastname": "Wanphunga",
-      "Phone": "0983710776",
-      "birthday": "",
-      "Gender": "",
-      "Faculty": ""
+      "Birthday": "2022-12-30",
+      "Gender": "male",
+      "Faculty": "คณะศิลปศาสตร์"
     }
   ]
 ]

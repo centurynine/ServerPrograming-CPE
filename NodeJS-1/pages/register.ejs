@@ -30,12 +30,12 @@
           <input class="form-control" type="date" id="Birthday"><br> 
           <label for="Birthday">เพศ :</label><br>
           <select class="form-control" id="Gender">
-            <option value="ไม่ระบุ">ไม่ระบุ</option>
+            <option value="">ไม่ระบุ</option>
             <option value="male">ชาย</option>
             <option value="famale">หญิง</option>
          </select><br>
           <select class="form-control" id="Faculty">
-            <option value="ไม่ระบุ">คณะที่เรียน</option>
+            <option value="">คณะที่เรียน</option>
             <option value="คณะศิลปศาสตร์">คณะศิลปศาสตร์</option>
             <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์</option>
             <option value="คณะเทคโนโลยีสื่อสารมวลชน">คณะเทคโนโลยีสื่อสารมวลชน</option>
@@ -64,10 +64,20 @@
   <script>
             
     async function submit() {
+      if (document.getElementById('FirstName').value == '' || 
+      document.getElementById('LastName').value == '' || 
+      document.getElementById('Phone').value == '' || 
+      document.getElementById('Email').value == '' || 
+      document.getElementById('Faculty').value == '' || 
+      document.getElementById('Gender').value == '' || 
+      document.getElementById('Birthday').value == '' ) {
+        alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+      } else {
         console.log('submit');
         let firstname = document.getElementById('FirstName').value
         let lastname = document.getElementById('LastName').value
         let phone = document.getElementById('Phone').value
+        let email = document.getElementById('Email').value
         let faculty = document.getElementById('Faculty').value
         let gender =document.getElementById('Gender').value
         let birthday = document.getElementById('Birthday').value
@@ -75,8 +85,9 @@
         data = {
             Firstname: firstname,
             Lastname: lastname,
+            Email: email,
             Phone: phone,
-            birthday: birthday,
+            Birthday: birthday,
             Gender: gender,
             Faculty: faculty,
         };
@@ -93,8 +104,10 @@
                     // location.href = `http://${root}/`
                     console.log(data);
                 })
-
+                
         clearInput();
+        alert('ลงทะเบียนสำเร็จ');
+              }
       }
 
       function clearInput(){
