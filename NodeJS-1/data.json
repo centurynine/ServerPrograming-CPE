@@ -1,13 +1,1 @@
-[
-  {
-    "FirstName": "Saran",
-    "LastName": "Wanphunga",
-    "Email": "lowlifeix@gmail.com",
-    "Password": "123456",
-    "Phone": "0983710776",
-    "Birthday": "2023-01-01",
-    "Gender": "male",
-    "Faculty": "คณะวิทยาศาสตร์และเทคโนโลยี",
-    "id": 1
-  }
-]
+[{"FirstName":"Saran","LastName":"Wanphunga","Email":"lowlifeix@gmail.com","Password":"123456","Phone":"0983710776","Birthday":"2023-01-01","Gender":"male","Faculty":"คณะวิทยาศาสตร์และเทคโนโลยี","id":1},{"FirstName":"Saran2","LastName":"Wanphunga2ss","Email":"lowlifeix2@gmail.com","Password":"123456","Phone":"0983710776","Birthday":"2022-12-30","Gender":"famale","Faculty":"คณะเทคโนโลยีการเกษตร","id":2}]
