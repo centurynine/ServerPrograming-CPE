@@ -32,11 +32,9 @@ var server = app.listen(port, function () {
 
 app.post('/addUser', async (req, res) => {
   let data = req.body
-  const jsonData = await JSON.parse(fs.readFileSync('./NodeJS-1/data.json', 'utf8'))
-  //jsonData.push(data)
-  console.log(jsonData)
-  console.log(data)
-  fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify([jsonData,data]))
+  var jsonData = await JSON.parse(fs.readFileSync('./NodeJS-1/data.json'));
+  jsonData.push([data]);
+   fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify(jsonData))
   res.send('Success');
 })
 
