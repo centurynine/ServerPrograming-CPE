@@ -15,3 +15,16 @@ body {
 .text-center {
     text-align: center;
   }
+.search-button{
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+.search-button:hover{
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+  }
