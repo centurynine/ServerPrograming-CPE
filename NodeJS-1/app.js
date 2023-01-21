@@ -50,6 +50,7 @@ app.post('/addUser', async (req, res) => {
   res.send('Success');
 })
 
+
 app.get('/user/:id', async (req, res) => {
   id = req.params.id;
   await fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
