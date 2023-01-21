@@ -9,12 +9,11 @@ body {
     font-weight: 400;
     line-height: 1.5;
     margin: 0;
-    padding: 0;
- 
-  }
+    padding: 0; 
+}
 .text-center {
     text-align: center;
-  }
+}
 .search-button{
     background-color: #000000;
     color: #ffffff;
@@ -22,9 +21,9 @@ body {
     border-radius: 5px;
     margin-left: 1rem;
     cursor: pointer;
-  }
+}
 .search-button:hover{
     background-color: #ffffff;
     color: #000000;
     border: 1px solid #000000;
-  }
+}

@@ -9,10 +9,10 @@ app.set("views", "NodeJS-1/pages");
 app.use(express.static(__dirname + '/pages'));
 app.use(express.json())
 app.get('', (req, res)=> {
-  res.render('register')
+  res.render('home')
 })
 app.get('/', (req, res)=> {
-  res.render('register')
+  res.render('home')
 })
 app.get('/home', (req, res)=> {
   fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
