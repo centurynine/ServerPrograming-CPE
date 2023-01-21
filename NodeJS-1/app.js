@@ -4,6 +4,8 @@ var  fs = require("fs");
 var app = express();
 let port = '80'
 let alert = require('alert'); 
+const { raw } = require("express");
+const { get } = require("jquery");
 
 app.set("view engine", "ejs");
 app.set("views", "NodeJS-1/pages");
@@ -30,6 +32,7 @@ app.get('/home', (req, res)=> {
 app.get('/register', (req, res)=> {
   res.render('register')
 })
+
 var server = app.listen(port, function () {
   var host = server.address().address
   var port = server.address().port
@@ -44,16 +47,20 @@ app.get('/fail', (req, res)=> {
   res.render('../pages/alertpages/added_fail.ejs', {success: 'เพิ่มข้อมูลไม่สำเร็จ'})
 });
 
+ 
 app.post('/addUser', async (req, res) => {
   let data = req.body;
+  var url = req.url;
   var jsonData = await JSON.parse(fs.readFileSync('./NodeJS-1/data.json'));
   for (let i=0;i < jsonData.length; i++) { 
     if (jsonData[i].Email == data.Email || (jsonData[i].FirstName == data.FirstName && jsonData[i].LastName == data.LastName)) {
       console.log(jsonData[i].Email + ' == ' + data.Email);
       console.log(jsonData[i].FirstName + ' == ' + data.FirstName);
       console.log(jsonData[i].LastName + ' == ' + data.LastName);
-      console.log('อีเมลล์หรือชื่อนี้มีอยู่แล้ว');
+      console.log('เพิ่มข้อมูลไม่สำเร็จ');
       return;
+      
+
     }
  
   }
@@ -62,7 +69,7 @@ app.post('/addUser', async (req, res) => {
   jsonID = jsonData.length;
   jsonData[jsonID-1].id = jsonID;
   fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify(jsonData));
-  res.send('Success');
+  console.log('เพิ่มข้อมูลสำเร็จ');
 })
 
 
@@ -79,4 +86,18 @@ app.get('/user/:id', async (req, res) => {
   }
 });
 })
+
+// app.get('/edit/:id', async (req, res) => {
+//   id = req.params.id;
+//   await fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
+//     if(err) {res.status(400).send('Error List not found');
+//   } else {
+//     for (let i = 0; i < listObj.length; i++) { 
+//       if (listObj[i].id == id) {
+//         res.render('edit', {ListUser: listObj[i]});
+//       }
+//     }
+//   }
+// });
+// })
  

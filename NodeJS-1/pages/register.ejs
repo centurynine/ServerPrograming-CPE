@@ -111,16 +111,8 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(data),
-                }).then((res) => {
-                    var root = document.location.hostname
-                    location.href = `http://${root}/success`;
-                  // console.log(data);
-                }).finally(() => {
-                  clearInput();
                 })
-
-
-
+                
               }
       }
 
