@@ -4,24 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>หน้าแรก</title>
+    <title>User</title>
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <%- include('../pages/nav'); %>
   </head>
   <body>
-    <h1 class="text-center p-5">Homepage</h1>
+    <h1 class="text-center p-5">User</h1>
     <div class="container h-100">
       <div class="row align-items-center h-100">
-        <% ListUsers.forEach(function(user){ %>
+
         <div class="col-6 mx-auto">
           <div class="jumbotron text-center">
-            <h3><%= user.Firstname %> <%= user.Lastname %></h3>
-            ID : <%= user.id %>
-            <p><a class="btn btn-primary btn-lg mt-2" href="/user/<%= user.id %>" role="button">View Profile</a></p>
+            <h3><%= ListUser.Firstname %> <%= ListUser.Lastname %></h3>
+            <%= ListUser.Email %>
+            <%= id %>
+     
         </div>
         </div>
-        <% }) %>
       </div>
   </div>
   

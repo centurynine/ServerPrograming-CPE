@@ -50,13 +50,16 @@ app.post('/addUser', async (req, res) => {
   res.send('Success');
 })
 
-app.get('/user/:id', (req, res) => {
-
-  fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
+app.get('/user/:id', async (req, res) => {
+  id = req.params.id;
+  await fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
     if(err) {res.status(400).send('Error List not found');
   } else {
-    res.render('index', {ListUsers: listObj});
-
+    for (let i = 0; i < listObj.length; i++) { 
+      if (listObj[i].id == id) {
+        res.render('user', {ListUser: listObj[i]});
+      }
+    }
   }
 });
 })

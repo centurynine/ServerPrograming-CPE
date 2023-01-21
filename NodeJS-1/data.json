@@ -1,12 +1,1 @@
-[
-  {
-    "Firstname": "dasdasd",
-    "Lastname": "dasdasd",
-    "Email": "lowlifeix@gmail.com",
-    "Phone": "0983710776",
-    "Birthday": "2023-01-01",
-    "Gender": "male",
-    "Faculty": "คณะศิลปศาสตร์",
-    "id": 1
-  }
-]
+[{"Firstname":"dasdasd","Lastname":"dasdasd","Email":"lowlifeix@gmail.com","Phone":"0983710776","Birthday":"2023-01-01","Gender":"male","Faculty":"คณะศิลปศาสตร์","id":1},{"Firstname":"dasdasd","Lastname":"dasdasd","Email":"lowlifeix@gmail.com","Phone":"0983710776","Birthday":"2022-12-31","Gender":"male","Faculty":"คณะศิลปศาสตร์","id":2},{"Firstname":"Saran","Lastname":"Wanphunga","Email":"lowlifeix@gmail.com","Phone":"0983710776","Birthday":"2022-12-29","Gender":"male","Faculty":"คณะศิลปศาสตร์","id":3}]
