@@ -37,13 +37,16 @@ var server = app.listen(port, function () {
 })
 
 app.get('/success', (req, res)=> {
-  res.render('added_data', {success: 'เพิ่มข้อมูลสำเร็จ'})
+  res.render('../pages/alertpages/added_data.ejs', {success: 'เพิ่มข้อมูลสำเร็จ'})
+});
+
+app.get('/fail', (req, res)=> {
+  res.render('../pages/alertpages/added_fail.ejs', {success: 'เพิ่มข้อมูลไม่สำเร็จ'})
 });
 
 app.post('/addUser', async (req, res) => {
-  let data = req.body
+  let data = req.body;
   var jsonData = await JSON.parse(fs.readFileSync('./NodeJS-1/data.json'));
-  
   for (let i=0;i < jsonData.length; i++) { 
     if (jsonData[i].Email == data.Email || (jsonData[i].FirstName == data.FirstName && jsonData[i].LastName == data.LastName)) {
       console.log(jsonData[i].Email + ' == ' + data.Email);
@@ -52,6 +55,7 @@ app.post('/addUser', async (req, res) => {
       console.log('อีเมลล์หรือชื่อนี้มีอยู่แล้ว');
       return;
     }
+ 
   }
   console.log(jsonData);
   jsonData.push(data);
@@ -75,3 +79,4 @@ app.get('/user/:id', async (req, res) => {
   }
 });
 })
+ 

@@ -114,10 +114,12 @@
                 }).then((res) => {
                     var root = document.location.hostname
                     location.href = `http://${root}/success`;
-                    console.log(data);
+                  // console.log(data);
+                }).finally(() => {
+                  clearInput();
                 })
-                
-        clearInput();
+
+
 
               }
       }
