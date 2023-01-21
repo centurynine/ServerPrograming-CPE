@@ -9,11 +9,14 @@ app.set("views", "NodeJS-1/pages");
 app.use(express.static(__dirname + '/pages'));
 app.use(express.json())
 app.get('', (req, res)=> {
-  res.render('home')
-})
-app.get('/', (req, res)=> {
-  res.render('home')
-})
+  fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
+    if(err) {res.status(400).send('Error List not found');
+  } else {
+    res.render('index', {ListUsers: listObj});
+  }
+});
+});
+ 
 app.get('/home', (req, res)=> {
   fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
     if(err) {res.status(400).send('Error List not found');
@@ -41,7 +44,19 @@ app.post('/addUser', async (req, res) => {
   var jsonData = await JSON.parse(fs.readFileSync('./NodeJS-1/data.json'));
   console.log(jsonData);
   jsonData.push(data);
+  jsonID = jsonData.length;
+  jsonData[jsonID-1].id = jsonID;
   fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify(jsonData))
   res.send('Success');
 })
 
+app.get('/user/:id', (req, res) => {
+
+  fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
+    if(err) {res.status(400).send('Error List not found');
+  } else {
+    res.render('index', {ListUsers: listObj});
+
+  }
+});
+})
