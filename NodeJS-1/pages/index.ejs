@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>หน้าแรก</title>
-    <!-- <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    /> -->
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <%- include('../pages/nav'); %>
   </head>
@@ -18,8 +15,10 @@
       <div class="row align-items-center h-100">
         <% ListUsers.forEach(function(user){ %>
         <div class="col-6 mx-auto">
-          <div class="jumbotron">
-            <%= user.Firstname %> <%= user.Lastname %>
+          <div class="jumbotron text-center">
+            <h3><%= user.Firstname %> <%= user.Lastname %></h3>
+            <%= user.Email %>
+            <p><a class="btn btn-primary btn-lg" href="/user/<%= user._id %>" role="button">View Profile</a></p>
         </div>
         </div>
         <% }) %>
