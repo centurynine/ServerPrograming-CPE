@@ -2,11 +2,12 @@
   {
     "FirstName": "Saran",
     "LastName": "Wanphunga",
-    "Email": "lowlifei2x@gmail.com",
+    "Email": "lowlifeix@gmail.com",
+    "Password": "123456",
     "Phone": "0983710776",
-    "Birthday": "2022-12-29",
+    "Birthday": "2023-01-01",
     "Gender": "male",
-    "Faculty": "คณะศิลปศาสตร์",
+    "Faculty": "คณะวิทยาศาสตร์และเทคโนโลยี",
     "id": 1
   }
 ]

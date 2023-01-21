@@ -9,20 +9,31 @@
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <%- include('../pages/nav'); %>
   </head>
+  <style>
+  body {
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(#fff 0%, #77A5F8 100%);
+  }
+     
+  </style>
   <body>
     
     <h1 class="text-center p-5">ระบบลงทะเบียนนักศึกษา</h1>
-    <div class="container">
+    <div class="container wrapper">
       <div class="row pt-4">
         <div class="col-4 mx-auto ">
           <label for="FirstName">ชื่อ :</label>
           <input class="form-control" type="text" id="FirstName" name="FirstName"><br>
           <label for="LastName">นามสกุล :</label>
           <input class="form-control" type="text" id="LastName" name="LastName"><br>
-          <label for="LastName">เบอร์โทรศัพท์ :</label>
+          <label for="Phone">เบอร์โทรศัพท์ :</label>
           <input class="form-control" type="text" id="Phone"><br>
-          <label for="LastName">อีเมลล์ :</label>
+          <label for="Email">อีเมลล์ :</label>
           <input class="form-control" type="email" id="Email"><br>
+          <label for="Password">รหัสผ่าน :</label>
+          <input class="form-control" type="password" id="Password"><br>
           <label for="Birthday">วันเกิด :</label><br>
           <input class="form-control" type="date" id="Birthday"><br> 
           <label for="Birthday">เพศ :</label><br>
@@ -67,7 +78,9 @@
       document.getElementById('Email').value == '' || 
       document.getElementById('Faculty').value == '' || 
       document.getElementById('Gender').value == '' || 
-      document.getElementById('Birthday').value == '' ) {
+      document.getElementById('Birthday').value == '' ||
+      document.getElementById('Password').value == '' 
+      ) {
         alert('กรุณากรอกข้อมูลให้ครบถ้วน');
       } else {
         console.log('submit');
@@ -78,15 +91,17 @@
         let faculty = document.getElementById('Faculty').value
         let gender =document.getElementById('Gender').value
         let birthday = document.getElementById('Birthday').value
+        let password = document.getElementById('Password').value
         // var data = {};
         data = {
             FirstName: firstname,
             LastName: lastname,
             Email: email,
+            Password: password,
             Phone: phone,
             Birthday: birthday,
             Gender: gender,
-            Faculty: faculty,
+            Faculty: faculty, 
         };
         console.log(data);
         let root = document.location.hostname
@@ -133,6 +148,10 @@
                     getValue.value = "";
                 }
       var getValue= document.getElementById("Email");
+              if (getValue.value !="") {
+                    getValue.value = "";
+                }
+      var getValue= document.getElementById("Password");
               if (getValue.value !="") {
                     getValue.value = "";
                 }
