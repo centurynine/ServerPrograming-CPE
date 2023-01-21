@@ -3,6 +3,7 @@ var  express = require("express");
 var  fs = require("fs");
 var app = express();
 let port = '80'
+let alert = require('alert'); 
 
 app.set("view engine", "ejs");
 app.set("views", "NodeJS-1/pages");
@@ -34,22 +35,21 @@ var server = app.listen(port, function () {
   var port = server.address().port
   console.log("Example app listening at http://%s:%s", host, port)
 })
-// app.post('/addUser', async (req, res) => {
-  
-// })
 
+app.get('/success', (req, res)=> {
+  res.render('added_data', {success: 'เพิ่มข้อมูลสำเร็จ'})
+});
 
 app.post('/addUser', async (req, res) => {
   let data = req.body
   var jsonData = await JSON.parse(fs.readFileSync('./NodeJS-1/data.json'));
   
   for (let i=0;i < jsonData.length; i++) { 
-    if (jsonData[i].Email == data.Email || jsonData[i].FirstName == data.FirstName || jsonData[i].LastName == data.LastName) {
+    if (jsonData[i].Email == data.Email || (jsonData[i].FirstName == data.FirstName && jsonData[i].LastName == data.LastName)) {
       console.log(jsonData[i].Email + ' == ' + data.Email);
       console.log(jsonData[i].FirstName + ' == ' + data.FirstName);
       console.log(jsonData[i].LastName + ' == ' + data.LastName);
-      console.log('Error User already exists');
-      res.send('Error');
+      console.log('อีเมลล์หรือชื่อนี้มีอยู่แล้ว');
       return;
     }
   }
@@ -57,7 +57,7 @@ app.post('/addUser', async (req, res) => {
   jsonData.push(data);
   jsonID = jsonData.length;
   jsonData[jsonID-1].id = jsonID;
-  fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify(jsonData))
+  fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify(jsonData));
   res.send('Success');
 })
 
