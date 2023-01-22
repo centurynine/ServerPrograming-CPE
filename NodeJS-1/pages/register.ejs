@@ -76,10 +76,10 @@
       document.getElementById('LastName').value == '' || 
       document.getElementById('Phone').value == '' || 
       document.getElementById('Email').value == '' || 
+      document.getElementById('Password').value == '' ||
       document.getElementById('Faculty').value == '' || 
       document.getElementById('Gender').value == '' || 
-      document.getElementById('Birthday').value == '' ||
-      document.getElementById('Password').value == '' 
+      document.getElementById('Birthday').value == '' 
       ) {
         alert('กรุณากรอกข้อมูลให้ครบถ้วน');
       } else {
@@ -88,11 +88,10 @@
         let lastname = document.getElementById('LastName').value
         let phone = document.getElementById('Phone').value
         let email = document.getElementById('Email').value
+        let password = document.getElementById('Password').value
         let faculty = document.getElementById('Faculty').value
         let gender =document.getElementById('Gender').value
         let birthday = document.getElementById('Birthday').value
-        let password = document.getElementById('Password').value
-        // var data = {};
         data = {
             FirstName: firstname,
             LastName: lastname,
