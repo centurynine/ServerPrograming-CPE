@@ -113,9 +113,9 @@
                 }).then (function(response) {
                     if (response.status == 200) {
                         alert('ลงทะเบียนสำเร็จ');
-                        location.href = `http://${root}/success`;
+                        location.href = `http://${root}/success` + '?status=' + 'success';
                     } else {
-                        location.href = `http://${root}/fail`;
+                        location.href = `http://${root}/success` + '?status=' + 'fail';
                         alert('ลงทะเบียนไม่สำเร็จ');
                     }
                 })

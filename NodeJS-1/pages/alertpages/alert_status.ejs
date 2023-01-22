@@ -40,8 +40,9 @@
 }
   </style>
   <body>
+
     <div class="jumbotron col-md-4 mx-auto">
-    <h1 class="text-center p-5">เพิ่มข้อมูลสำเร็จ</h1>
+    <h1 class="text-center p-5" id="status"></h1>
     <div class="container h-100">
       <div class="row align-items-center h-100">
         <div class="col-6 mx-auto">
@@ -50,8 +51,17 @@
         </div>
         </div>
       </div>
-  </div>
-    </div>
+
   </body>
+
+<script>
+  var URLSearchParams = new URLSearchParams(window.location.search);
+  console.log(URLSearchParams.get("status"));
+  if (URLSearchParams.get("status") == "success") {
+    document.getElementById("status").innerHTML = "เพิ่มข้อมูลสำเร็จ";
+  } else {
+    document.getElementById("status").innerHTML = "เพิ่มข้อมูลไม่สำเร็จ";
+  }
+</script>
 
 </html>

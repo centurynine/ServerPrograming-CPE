@@ -40,12 +40,13 @@ var server = app.listen(port, function () {
 })
 
 app.get('/success', (req, res)=> {
-  res.render('../pages/alertpages/added_data.ejs', {success: 'เพิ่มข้อมูลสำเร็จ'})
+  res.render('../pages/alertpages/alert_status.ejs', {success: 'เพิ่มข้อมูลสำเร็จ'})
+
 });
 
-app.get('/fail', (req, res)=> {
-  res.render('../pages/alertpages/added_fail.ejs', {success: 'เพิ่มข้อมูลไม่สำเร็จ'})
-});
+// app.get('/fail', (req, res)=> {
+//   res.render('../pages/alertpages/added_fail.ejs', {success: 'เพิ่มข้อมูลไม่สำเร็จ'})
+// });
 
  
 app.post('/addUser', async (req, res) => {
@@ -55,9 +56,6 @@ app.post('/addUser', async (req, res) => {
   if (data.FirstName != '' || data.LastName != '' || data.Phone != '' || data.Email != '' || data.Password != '' || data.Faculty != '' || data.Gender != '' || data.Birthday != '') {
     for (let i=0;i < jsonData.length; i++) { 
       if (jsonData[i].Email == data.Email || (jsonData[i].FirstName == data.FirstName && jsonData[i].LastName == data.LastName)) {
-        console.log(jsonData[i].Email + ' == ' + data.Email);
-        console.log(jsonData[i].FirstName + ' == ' + data.FirstName);
-        console.log(jsonData[i].LastName + ' == ' + data.LastName);
         console.log('เพิ่มข้อมูลไม่สำเร็จ');
         response(res, 400, 'เพิ่มข้อมูลไม่สำเร็จ');
         return;
