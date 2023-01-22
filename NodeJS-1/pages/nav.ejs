@@ -39,19 +39,20 @@
       });
       const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: raw,
         redirect: 'follow'
       };
-      fetch(`${root}/search`, requestOptions)
+      fetch(root + "/search", requestOptions)
         .then(response => response.text())
         .then(result => {
           console.log(result);
-          window.location.href = `${root}/search/${search}`;
-
+          window.location.href = root + "/search/" + search;
         })
         .catch(error => console.log('error', error));
-
   }
+
 </script>
 </html>
