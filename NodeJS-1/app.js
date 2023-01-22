@@ -3,9 +3,8 @@ var  express = require("express");
 var  fs = require("fs");
 var app = express();
 let port = '80'
-let alert = require('alert'); 
-const { raw } = require("express");
-const { get } = require("jquery");
+var CryptoJS = require("crypto-js");
+var func = require('./function');
 
 app.set("view engine", "ejs");
 app.set("views", "NodeJS-1/pages");
@@ -36,21 +35,46 @@ app.get('/register', (req, res)=> {
 var server = app.listen(port, function () {
   var host = server.address().address
   var port = server.address().port
-  console.log("Example app listening at http://%s:%s", host, port)
+  console.log("Web listening at http://%s:%s", host, port)
 })
 
 app.get('/success', (req, res)=> {
   res.render('../pages/alertpages/alert_status.ejs', {success: 'เพิ่มข้อมูลสำเร็จ'})
+});
+ 
 
+app.get('/search/:searchname', async (req, res) => {
+  searchname = req.params.searchname;
+  console.log(searchname);
+  await fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
+    if(err) {res.status(400).send('Error List not found');
+  } else {
+    for (let i = 0; i < listObj.length; i++) {
+      listObj[i].FirstName = listObj[i].FirstName.toLowerCase();
+      listObj[i].LastName = listObj[i].LastName.toLowerCase();
+      listObj[i].Email = listObj[i].Email.toLowerCase();
+      listObj[i].Phone = listObj[i].Phone.toLowerCase();
+      searchname = searchname.toLowerCase();
+
+      if (listObj[i].FirstName == searchname || listObj[i].LastName == searchname || listObj[i].Email == searchname || listObj[i].Phone == searchname) {
+        console.log('พบข้อมูล');
+        response(res , 200, listObj[i]);
+      }
+      else {
+        console.log('ไม่พบข้อมูล');
+ 
+      }
+    }
+  }
+});
 });
 
-// app.get('/fail', (req, res)=> {
-//   res.render('../pages/alertpages/added_fail.ejs', {success: 'เพิ่มข้อมูลไม่สำเร็จ'})
-// });
 
- 
+
 app.post('/addUser', async (req, res) => {
   let data = req.body;
+  Encrypted_password = CryptoJS.MD5(data.Password).toString()
+  data.Password = Encrypted_password
   var url = req.url;
   var jsonData = await JSON.parse(fs.readFileSync('./NodeJS-1/data.json'));
   if (data.FirstName != '' || data.LastName != '' || data.Phone != '' || data.Email != '' || data.Password != '' || data.Faculty != '' || data.Gender != '' || data.Birthday != '') {

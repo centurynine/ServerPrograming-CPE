@@ -3,22 +3,22 @@
     "FirstName": "Saran",
     "LastName": "Wanphunga",
     "Email": "lowlifeix@gmail.com",
-    "Password": "123456",
+    "Password": "e10adc3949ba59abbe56e057f20f883e",
     "Phone": "0983710776",
-    "Birthday": "2023-01-01",
+    "Birthday": "2022-12-28",
     "Gender": "male",
-    "Faculty": "คณะวิทยาศาสตร์และเทคโนโลยี",
+    "Faculty": "คณะศิลปศาสตร์",
     "id": 1
   },
   {
     "FirstName": "Saran2",
-    "LastName": "Wanphunga2sssdadasdasasdd",
-    "Email": "lowlifeixa@gmail.com",
-    "Password": "123456",
+    "LastName": "Wanphunga2",
+    "Email": "lowlifeix2@gmail.com",
+    "Password": "e10adc3949ba59abbe56e057f20f883e",
     "Phone": "0983710776",
     "Birthday": "2022-12-29",
     "Gender": "male",
-    "Faculty": "คณะพยาบาลศาสตร์",
+    "Faculty": "คณะวิศวกรรมศาสตร์",
     "id": 2
   }
 ]
