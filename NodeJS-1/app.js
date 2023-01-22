@@ -41,72 +41,6 @@ var server = app.listen(port, function () {
 app.get('/success', (req, res)=> {
   res.render('../pages/alertpages/alert_status.ejs', {success: 'เพิ่มข้อมูลสำเร็จ'})
 });
- 
- 
- 
-
-
-// app.get('/search/:searchname', (req, res) => {
-//   searchname = req.params.searchname;
-//   let hasData = false;
-//   console.log(searchname);
-//    fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
-//     if(err) {
-//       res.status(400).send('Error List not found');
-//       console.log('Error List not found');
-//   } else {
-//     for (let i = 0; i < listObj.length; i++) {
-//       listObj[i].FirstName = listObj[i].FirstName.toLowerCase();
-//       listObj[i].LastName = listObj[i].LastName.toLowerCase();
-//       listObj[i].Email = listObj[i].Email.toLowerCase();
-//       listObj[i].Phone = listObj[i].Phone.toLowerCase();
-//       searchname = searchname.toLowerCase();
-//       if (listObj[i].FirstName == searchname || listObj[i].LastName == searchname || listObj[i].Email == searchname || listObj[i].Phone == searchname) {
-//         console.log('พบข้อมูล');
-//         hasData = true;
-//         response(res , 200, listObj[i]);
-//         res.render('search', {ListUsers: listObj[i]});
-//         return;
-//       }
-//       else {
-//         console.log('ไม่พบข้อมูล');
-
-//       }
-
-//     }
-//     if (hasData == false) {
-//       console.log('ไม่พบข้อมูล');
-//       response(res , 400, 'ไม่พบข้อมูล');
-//       return;
-//     }
-//   }
-// });
-// });
-
-// app.get('/search/:searchname', (req, res) => {
-//   searchname = req.params.searchname;
-//   console.log(searchname);
-//     fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
-//     if(err) {
-//       res.status(400).send('Error List not found');
-//       console.log('Error List not found');
-//   } else {
-//     searchData = searchData(listObj, searchname);
-//     console.log(searchData);
-//     if (searchData == false) {
-//       res.render('search');
-//       response(res , 400, 'ไม่พบข้อมูล');
-//       return;
-//     }
-//     else {
-//       console.log(searchData);
-//       response(res , 200, 'พบข้อมูล');
-//       res.render('search', {ListUsers: searchData});
-//       return;
-//     }
-//   }
-// });
-// });
 
 app.get('/search/:variable', async (req, res) => {
   var variable = req.params.variable;
@@ -186,19 +120,4 @@ function searchData (data, searchname) {
 
   return false;
 }
-
-
-// app.get('/edit/:id', async (req, res) => {
-//   id = req.params.id;
-//   await fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
-//     if(err) {res.status(400).send('Error List not found');
-//   } else {
-//     for (let i = 0; i < listObj.length; i++) { 
-//       if (listObj[i].id == id) {
-//         res.render('edit', {ListUser: listObj[i]});
-//       }
-//     }
-//   }
-// });
-// })
  
