@@ -32,6 +32,14 @@ app.get('/register', (req, res)=> {
   res.render('register')
 })
 
+app.get('/search', (req, res)=> {
+  fs.readFile('./NodeJS-1/data.json', (err, data) => {const listObj= JSON.parse(data);
+    if(err) {res.status(400).send('Error List not found');
+  } else {
+    res.render('index', {ListUsers: listObj});
+  }
+});
+});
 var server = app.listen(port, function () {
   var host = server.address().address
   var port = server.address().port
