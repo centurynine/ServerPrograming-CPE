@@ -65,7 +65,7 @@ app.post('/addUser', async (req, res) => {
     jsonData.push(data);
     jsonID = jsonData.length;
     jsonData[jsonID-1].id = jsonID;
-    fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify(jsonData));
+    fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify(jsonData, null, "  "));
     response(res, 200, 'เพิ่มข้อมูลสำเร็จ');
     console.log('เพิ่มข้อมูลสำเร็จ');
   } else {

@@ -1,1 +1,24 @@
-[{"FirstName":"Saran","LastName":"Wanphunga","Email":"lowlifeix@gmail.com","Password":"123456","Phone":"0983710776","Birthday":"2023-01-01","Gender":"male","Faculty":"คณะวิทยาศาสตร์และเทคโนโลยี","id":1},{"FirstName":"Saran2asdasdasdasa","LastName":"Wanphunga2sssdadasdasd","Email":"lowlifeixa@gmail.com","Password":"123456","Phone":"0983710776","Birthday":"2022-12-29","Gender":"male","Faculty":"คณะการแพทย์บูรณาการ","id":2},{"FirstName":"Saran2asdasdasdasaasd","LastName":"Wanphunga2sssdadasdasasdd","Email":"lowlifeiasdasx@gmail.com","Password":"123456","Phone":"0983710776","Birthday":"2022-12-29","Gender":"male","Faculty":"คณะวิศวกรรมศาสตร์","id":3}]
+[
+  {
+    "FirstName": "Saran",
+    "LastName": "Wanphunga",
+    "Email": "lowlifeix@gmail.com",
+    "Password": "123456",
+    "Phone": "0983710776",
+    "Birthday": "2023-01-01",
+    "Gender": "male",
+    "Faculty": "คณะวิทยาศาสตร์และเทคโนโลยี",
+    "id": 1
+  },
+  {
+    "FirstName": "Saran2",
+    "LastName": "Wanphunga2sssdadasdasasdd",
+    "Email": "lowlifeixa@gmail.com",
+    "Password": "123456",
+    "Phone": "0983710776",
+    "Birthday": "2022-12-29",
+    "Gender": "male",
+    "Faculty": "คณะพยาบาลศาสตร์",
+    "id": 2
+  }
+]
