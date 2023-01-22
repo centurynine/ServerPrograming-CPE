@@ -60,6 +60,7 @@ app.get('/search/:variable', async (req, res) => {
         res.render('search', {ListUser: listObj[i]});
       }
     }
+    return;
   }
 });
 })
