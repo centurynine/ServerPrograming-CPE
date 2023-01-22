@@ -58,6 +58,8 @@ app.post('/addUser', async (req, res) => {
       console.log(jsonData[i].FirstName + ' == ' + data.FirstName);
       console.log(jsonData[i].LastName + ' == ' + data.LastName);
       console.log('เพิ่มข้อมูลไม่สำเร็จ');
+      response(res, 400, 'เพิ่มข้อมูลไม่สำเร็จ');
+
       return;
       
 
@@ -69,6 +71,7 @@ app.post('/addUser', async (req, res) => {
   jsonID = jsonData.length;
   jsonData[jsonID-1].id = jsonID;
   fs.writeFileSync('./NodeJS-1/data.json', JSON.stringify(jsonData));
+  response(res, 200, 'เพิ่มข้อมูลสำเร็จ');
   console.log('เพิ่มข้อมูลสำเร็จ');
 })
 
@@ -86,6 +89,10 @@ app.get('/user/:id', async (req, res) => {
   }
 });
 })
+
+function response(res, status, message) {
+  res.status(status).json({message: message});
+}
 
 // app.get('/edit/:id', async (req, res) => {
 //   id = req.params.id;

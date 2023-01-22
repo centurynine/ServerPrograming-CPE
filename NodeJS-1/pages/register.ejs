@@ -111,7 +111,16 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(data),
+                }).then (function(response) {
+                    if (response.status == 200) {
+                        alert('ลงทะเบียนสำเร็จ');
+                        clearInput();
+                    } else {
+                        alert('ลงทะเบียนไม่สำเร็จ');
+                    }
                 })
+                 
+       
                 
               }
       }
