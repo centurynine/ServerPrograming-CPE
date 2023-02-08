@@ -20,5 +20,16 @@
     "Gender": "male",
     "Faculty": "คณะวิศวกรรมศาสตร์",
     "id": 2
+  },
+  {
+    "FirstName": "asda",
+    "LastName": "asdasdas",
+    "Email": "lowlifeix@adgmail.com",
+    "Password": "9ae0147d65724f72f74804af4aac6f13",
+    "Phone": "dada",
+    "Birthday": "2023-02-23",
+    "Gender": "male",
+    "Faculty": "คณะเทคโนโลยีการเกษตร",
+    "id": 3
   }
 ]

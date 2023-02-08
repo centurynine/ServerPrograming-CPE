@@ -59,11 +59,15 @@ app.get('/search/:variable', async (req, res) => {
       if (listObj[i].FirstName == variable) {
         res.render('search', {ListUser: listObj[i]});
       }
+      if(i == listObj.length-1) {
+        res.render('../pages/alertpages/alert_status.ejs',
+         {status: 'searchfail'});
+
+      }
     }
-    return;
   }
 });
-})
+});
 
 app.post('/addUser', async (req, res) => {
   let data = req.body;
@@ -125,8 +129,12 @@ function searchData (data, searchname) {
     else {
       console.log('ไม่พบข้อมูล');
     }
-  }
+    return false;
+}
 
   return false;
 }
  
+function stop() {
+  process.exit()
+}

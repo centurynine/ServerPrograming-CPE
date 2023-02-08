@@ -51,17 +51,19 @@
         </div>
         </div>
       </div>
-
+      
   </body>
-
+ 
 <script>
   var URLSearchParams = new URLSearchParams(window.location.search);
   console.log(URLSearchParams.get("status"));
   if (URLSearchParams.get("status") == "success") {
     document.getElementById("status").innerHTML = "เพิ่มข้อมูลสำเร็จ";
-  } else {
+  } else if (URLSearchParams.get("status") == "fail"){
     document.getElementById("status").innerHTML = "เพิ่มข้อมูลไม่สำเร็จ";
-  }
+  } else {
+  document.getElementById("status").innerHTML = "ไม่พบข้อมูล";
+}
 </script>
 
 </html>
