@@ -13,42 +13,56 @@
     <title>แบบฟอร์มสมัครสมาชิก</title>
   </head>
   <body>
- 
-    <div class="p-md-5">
-      </div>
+    <div class="p-md-5"></div>
     <div class="container text-center p-md-3">
       <h1>แบบฟอร์มสมัครสมาชิก</h1>
     </div>
     <div class="container">
-      <form action="member.php" method="post" >
+      <form action="member.php" method="post">
         <!-- Email input -->
         <div class="form-outline mb-4">
-            <input type="name" id="name" name="name" class="form-control" />
-            <label class="form-label" for="name">Name</label>
-          </div>
+          <input type="name" id="name" name="name" class="form-control" />
+          <label class="form-label" for="name">Name</label>
+        </div>
 
         <div class="form-outline mb-4">
-          <input type="email" id="email"  name="email" class="form-control" />
+          <input type="email" id="email" name="email" class="form-control" />
           <label class="form-label" for="email">Email address</label>
         </div>
 
         <div class="form-outline mb-4">
-          <input type="password" id="password" name="password" class="form-control" />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+          />
           <label class="form-label" for="password">Password</label>
         </div>
 
         <button type="submit" class="btn btn-primary btn-block mb-4">
           Sign in
         </button>
-
       </form>
     </div>
     <style>
-  
-    </style>
+      @media only screen and (min-width: 768px) {
+        body {
+          max-width: 768px;
+          margin: 0 auto;
+        }
+      }
 
-    <script>
-      
-    </script>
+      @media only screen and (min-width: 992px) {
+        body {
+          max-width: 992px;
+          margin: 0 auto;
+        }
+      }
+
+      body {
+        font-size: 16px;
+      }
+    </style>
   </body>
 </html>
